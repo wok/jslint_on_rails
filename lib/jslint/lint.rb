@@ -62,6 +62,7 @@ module JSLint
           Utils.log print(Utils.pluralize(errors.length, "error") + ":\n");
 
           errors.each do |error|
+            next if error == nil
             Utils.log "Lint at line #{error['line']} character #{error['character']}: #{error['reason']}"
 
             if error['evidence']
